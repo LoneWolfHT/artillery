@@ -28,7 +28,7 @@ function artillery.launch_projectile(obj, def)
 	local dspeed = def.speed/5
 
 	obj:set_velocity({x=newdir.x, y=def.climb*def.speed/8, z=newdir.z})
-	obj:setacceleration({x=(-newdir.x/dspeed)+math.random(-5, 5), y=-def.climb*def.speed/3.5, z=(-newdir.z/dspeed)+math.random(-5, 5)})
+	obj:setacceleration({x=(-newdir.x/dspeed)+math.random(-7, 7), y=-def.climb*def.speed/3.5, z=(-newdir.z/dspeed)+math.random(-7, 7)})
 end
 
 function artillery.explode(pos, radius)
