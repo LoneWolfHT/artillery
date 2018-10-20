@@ -63,7 +63,12 @@ function artillery.register_grenade(name, def)
         description = def.description,
         stack_max = 1,
         range = 4,
+        paramtype = "light",
         drawtype = "plantlike",
+        selection_box = {
+            type = "fixed",
+            fixed = {-0.3, -0.5, -0.3, 0.3, 0.4, 0.3},
+        },
         tiles = {def.image},
         inventory_image = def.image,
         groups = {grenade = def.radius, oddly_breakable_by_hand = 1},
