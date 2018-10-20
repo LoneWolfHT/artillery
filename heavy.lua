@@ -28,6 +28,7 @@ minetest.register_node("artillery:mortar_cannon", {
 	tiles = {"default_stone.png"},
 	groups = {oddly_breakable_by_hand = 3, attached_node = 1, force_floor = 1},
 	mesh = "mortar.obj",
+	paramtype = "light",
 	paramtype2 = "facedir",
 	force_floor,
 	selection_box = {
