@@ -79,7 +79,7 @@ end
 
 artillery.register_grenade("regular", {
     description = "A regular grenade",
-    image = "default_apple.png",
+    image = "grenade_regular.png",
     radius = 0,
     custom_explode = false,
     timeout = 3
