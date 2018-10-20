@@ -39,12 +39,6 @@ function artillery.explode(pos, radius)
 		ignore_protection = false,
 		ignore_on_blast = false
 	})
-
-	local placepos = minetest.find_node_near(pos, 3, {"air"})
-
-	if minetest.get_modpath("fire") and placepos ~= nil then
-		minetest.set_node(placepos, {name = "fire:basic_flame"})
-	end
 end
 
 dofile(minetest.get_modpath("artillery").."/nodes.lua")
