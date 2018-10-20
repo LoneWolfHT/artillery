@@ -76,8 +76,10 @@ function artillery.register_grenade(name, def)
             local player_name = user:get_player_name()
             local inv = user:get_inventory()
 
-            grenade = throw_grenade("artillery:grenade_"..name, user)
-            inv:remove_item("main", "artillery:grenade_"..name)
+            if pointed_thing.type ~= "node" then
+                grenade = throw_grenade("artillery:grenade_"..name, user)
+                inv:remove_item("main", "artillery:grenade_"..name)
+            end
         end
     })
 end
