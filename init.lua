@@ -34,11 +34,17 @@ end
 function artillery.explode(pos, radius)
 	tnt.boom(pos, {
 		radius = radius,
-		damage_radius = radius-1,
+		damage_radius = radius+1,
 		explode_center = false,
 		ignore_protection = false,
 		ignore_on_blast = false
 	})
+
+	local placepos = minetest.find_node_near(pos, 3, {"air"})
+
+	if minetest.get_modpath("fire") and placepos ~= nil then
+		minetest.set_node(placepos, {name = "fire:basic_flame"})
+	end
 end
 
 dofile(minetest.get_modpath("artillery").."/nodes.lua")
