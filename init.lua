@@ -1,23 +1,9 @@
 artillery = {}
 
-local function param2_to_dir(param2)
-	if param2 == 0 then
-		return({x=0, y=0, z=1})
-	elseif param2 == 1 then
-		return({x=1, y=0, z=0})
-	elseif param2 == 2 then
-		return({x=0, y=0, z=-1})
-	elseif param2 == 3 then
-		return({x=-1, y=0, z=0})
-	else
-		return({x=0, y=0, z=0})
-	end
-end
-
 function artillery.launch_projectile(obj, def)
 	local self = obj:get_luaentity()
 	local pos = obj:get_pos()
-	local dir = param2_to_dir(def.param2)
+	local dir = minetest.facedir_to_dir(def.param2)
 	local targetpos = vector.add(vector.multiply(dir, def.distance), pos)
 
 	self.startpos = pos
